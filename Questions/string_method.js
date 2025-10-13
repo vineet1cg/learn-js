@@ -68,3 +68,19 @@ let ans6 = str5.toWellFormed();
 let str7 = "    helo_world";
 let ans7 = str7.trim();
 console.log(ans7);
+
+//padStart
+let str8 = "5";
+let ans8 = str8.padStart(4,"0");
+console.log(ans8);
+
+//replace 
+let str9 = "He;;o";
+let ans9 = str9.repeat(4);
+let ans9_2 = str9.replaceAll(";","l"); // can be replaced with replace 
+console.log(ans9_2);
+
+//split
+let str10 = "a,b,c,d,e,f,g";
+let ans10 = str10.split("a");
+console.log(ans10);
