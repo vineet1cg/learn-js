@@ -86,7 +86,7 @@ console.log("The Number Of Negative In Array Is",countNegative);
 console.log("The Number Of Zero In Array Is",countZero);
 
 
-//find numbers greater than a value
+//find numbers greater than a value   
 
 var limit = 4;
 for(var q = 0 ; q<n ; q++){
