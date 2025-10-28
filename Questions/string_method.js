@@ -84,3 +84,4 @@ console.log(ans9_2);
 let str10 = "a,b,c,d,e,f,g";
 let ans10 = str10.split("a");
 console.log(ans10);
+
