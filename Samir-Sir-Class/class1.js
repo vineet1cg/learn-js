@@ -38,3 +38,12 @@ function add(x,y){
 // console.log(add(10,20));
 var sub = add(10,20);
 sub();
+function hello(){
+    var y = 10;
+    console.log(x)
+}
+console.log(x);
+for(var i = 0 ; i<x ; i++){
+    console.log(i);
+};
+console.log(i);
