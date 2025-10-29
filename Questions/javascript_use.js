@@ -17,11 +17,11 @@ const heading3 = document.getElementsByTagName("h4");
 
 heading1.style.backgroundColor="blue";
 for(let i = 0 ; i<heading2.length ; i++){
-    heading2[i].style.backgroundColor="red";
+    heading2[i].textContent="red";
 }
-for(let j = 0 ; j<heading3.length ; j++){
-    heading3[i].style.backgroundColor="yellow";
-}
+// for(let j = 0 ; j<heading3.length ; j++){
+//     heading3[i].textContent="yellow";
+// }
 
 let heading = document.querySelectorAll("h1");
 heading.style.fontsize = "50px";
