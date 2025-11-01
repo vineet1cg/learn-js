@@ -8,17 +8,23 @@ const maxUpdate = document.getElementById("max");
 button.addEventListener("click", () => {
   counter++;
   update.innerText = counter;
-  localStorage.setItem("counter", counter);
+  localStorage.setItem("key", counter);
   // console.log(counter);
 });
 
+
+
 reset.addEventListener("click", () => {
-  prev.innerText = localStorage.getItem("counter");
+  prev.innerText = localStorage.getItem("key");
   counter = 0;
-  localStorage.setItem("counter",counter);
+  localStorage.setItem("key",counter);  
   update.innerText = counter;
   // console.log(counter);
 });
+
+
+
+
 // preffered way is to use innerText insted of innerHTML when changing the text
 // node list and html content
 // see DOM And How It Works
@@ -32,3 +38,15 @@ reset.addEventListener("click", () => {
 //     }
 // };
 // obj.add(5,4);
+
+// setInterval
+// let count = 0;
+// function hello(){
+//     count++;
+//     if(count<=10){
+//         console.log("hello")
+//     } else{
+//         clearInterval(id);
+//     }
+// }
+// let id = setInterval(hello,2000);
