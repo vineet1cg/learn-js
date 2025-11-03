@@ -15,6 +15,15 @@ var time1 =10; // time -> update....
 var track = false;
 var idTrack = null; // Timr=e Crntorl
 
+function changeColor(){
+   
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    const rgbColor = `rgb(${red}, ${green}, ${blue})`;
+    document.body.style.backgroundColor = rgbColor;
+};
+
 function loadContent(){
     dataLoad();
     displayMessage();
@@ -79,6 +88,7 @@ function startGame(){
 };
 
 function clickMe(){
+    changeColor();
     if(track){
         current++;
         displayMessage();
