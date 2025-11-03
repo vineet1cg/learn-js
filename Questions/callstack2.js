@@ -26,7 +26,7 @@ sayHello();
 
 
 //what is call stack ?
-//follows lifo
+// follows lifo
 // from base to top
 // the uppermost gets removed first 
 // the lowermost gets removed the last
@@ -44,8 +44,7 @@ function fC(){
     fD()
 }
 function fD(){
-    console.log("D");
-    
+    console.log("D");    
 }
 fA();
 

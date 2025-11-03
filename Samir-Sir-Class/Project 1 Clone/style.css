@@ -84,11 +84,11 @@ body{
 .timer-section h2{
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 8px; 
+    margin-bottom: 8px;
 }
 .timer{
     font-size: 36px;
-    font-weight: bold;   
+    font-weight: bold;  
     color: blue;
 }
 .button-section{

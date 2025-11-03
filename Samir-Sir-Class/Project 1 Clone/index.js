@@ -99,4 +99,4 @@ startButton.addEventListener('click',startGame);
 
 clickButton.addEventListener('click',clickMe);
 
-resetButton.addEventListener('click',resetBtn)
+resetButton.addEventListener('click',resetBtn);
