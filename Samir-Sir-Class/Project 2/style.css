@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 400px;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 20px 15px 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.color-display {
+  background-color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.message {
+  font-size: 18px;
+  margin-bottom: 20px;
+  min-height: 24px;
+}
+
+.streak-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.streak-box {
+  background-color: #444;
+  padding: 12px 20px;
+  border-radius: 6px;
+  width: 48%;
+}
+
+.streak-box h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ddd;
+}
+
+.streak-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f3c623;
+}
+
+.controls {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.control-btn,
+.mode-btn {
+  background-color: #555;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-btn:hover,
+.mode-btn:hover {
+  background-color: #f3c623;
+  color: #222;
+}
+
+.mode-btn.selected {
+  background-color: #f3c623;
+  color: #222;
+  font-weight: 900;
+}
+
+.color-box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.color-box {
+  height: 90px;
+  background-color: #666;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.color-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(243, 198, 35, 0.7);
+}
+
+
+
