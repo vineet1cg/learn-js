@@ -20,16 +20,15 @@ const newRoundBtn = document.querySelector('#newRoundBtr');
 const easyBtn = document.querySelector('#easyBtn');
 const hardBtn = document.querySelector('#hardBtn');
 const resetStreakBtn = document.querySelector('#resetStreakBtn');
+const btnTrack = document.querySelector('.color-box-container');
 
 
 // step -> 2 variables For Score And Max Score 
-var currentStreak = 0;
-var bestStreak = 0;
-// var correctColor = null;
-var pickColor = 0;
-var color = [];
-var num = 6;
-var pickCorrectColor = 0;
+var currentStreak = 0; // user track
+var bestStreak = 0; // previous data fetch
+var color = []; // empty array for colors 
+var num = 6; // how many colors to show depneding on game difficulty
+var pickCorrectColor = 0; // picks correct color for the answer
 
 // step -> loading process
 function webLoad(){
@@ -64,28 +63,50 @@ function changeColor(){
 function genrateColor(num){
     const arr=[];
     for(var i = 0 ; i<num ; i++){
-        arr.push(changeColor());
+        arr.push(changeColor()); // push random color to an array
     }
-    return arr;
+    return arr; // we must return to store the array in color array 
 }
 function pickGenrator(){
     const math = Math.floor(Math.random()*color.length);
     return color[math];
 }
 function setGame(){
-    color = genrateColor(num);
-    pickCorrectColor = pickGenrator(); 
-    colorDisplay.textContent = pickCorrectColor;
+    color = genrateColor(num); // color => empty array -> to store the total 6 rgb colors >> ek esa function jis jab call kare tab actual kaam karna 
+    pickCorrectColor = pickGenrator();  // to genrate a correct color randomly from color array and show with the next step
+    colorDisplay.textContent = pickCorrectColor; // display the correct color on the screen
     for(var j = 0 ; j<color.length; j++){
-        colorBoxes[j].style.backgroundColor = color[j];
+        colorBoxes[j].style.backgroundColor = color[j]; // for coloring the boxes from color array
+        // color boxes has the array imported from html which will contain all the 6 boxes from html
+        // and by using this loop we color those boxes
     }
 }
 
-
-
-
 webLoad();
-
-
+// fetch the parent and adding event listener by using for each method
+/// fetched parent on code line : 23
 // for each button we need to color the boxes and then also genrate a random rgb
 
+function trackBtn(event) {
+    var element = event.target;
+    if (!element.classList.contains('color-box')) return; // Only trigger if a color box
+    var rgb = element.style.backgroundColor;
+
+    if (pickCorrectColor === rgb) {
+        messageDisplay.textContent = "You Win Bro!";
+        currentStreak++;
+        if (currentStreak > bestStreak) {
+            bestStreak = currentStreak;
+            localStorage.setItem('bestStreak', bestStreak); // Save best streak persistently
+        }
+        displayContent();
+        setGame();
+    } else {
+        messageDisplay.textContent = "Try Again Bruh";
+        currentStreak = 0;
+        displayContent();
+    }
+}
+
+btnTrack.addEventListener('click',trackBtn);
+// we must not call the function here so we can track all the 6 buttons

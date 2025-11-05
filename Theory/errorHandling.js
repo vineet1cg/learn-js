@@ -33,17 +33,17 @@
 
 
 // coustom Error Time !!
-// try{
-//     //refr err
-//     console.log(x);
-// } catch(err){
-//     throw new Error("Lemon Error He Bhai , Declare Karna Bhul Gya lol");
-// }
+try{
+    //refr err
+    console.log(x);
+} catch(err){
+    throw new Error("Lemon Error He Bhai , Declare Karna Bhul Gya lol");
+}
 
 
 // when using error codes
-let errorCode = 404;
-if(errorCode==404){
+// let errorCode = 404;
+// if(errorCode==404){
 
-    throw new Error("Abey Galat Json Chali Gayi Be,Check Kar");
-}
+//     throw new Error("Abey Galat Json Chali Gayi Be,Check Kar");
+// }
