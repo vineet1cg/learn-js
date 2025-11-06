@@ -95,7 +95,22 @@ function trackBtn(event) {
         messageDisplay.textContent = 'Try Again Bruh';
         currentStreak = 0;
         displayContent();
+        disableWrongButton(trackBtn);   
     }
+}
+function disableWrongButton(element) {
+    element.disabled = true;
+    element.style.opacity = "0.5";
+    element.style.cursor = "not-allowed";
+}
+
+function colorAllBoxes(color) {
+    colorBoxes.forEach(box => {
+        box.style.backgroundColor = color;
+        box.disabled = false;
+        box.style.opacity = "1";
+        box.style.cursor = "pointer";
+    });
 }
 
 // Step 9: Difficulty selector - easy (3 colors), hard (6 colors)
