@@ -64,7 +64,7 @@ function setGame() {
     color = genrateColor(num);
     pickCorrectColor = pickGenrator();
     colorDisplay.textContent = pickCorrectColor;
-    messageDisplay.textContent = '';
+    messageDisplay.textContent = 'Pick A Color';
 
     for (var j = 0; j < colorBoxes.length; j++) {
         if (color[j]) {
@@ -83,8 +83,8 @@ function trackBtn(event) {
     var rgb = element.style.backgroundColor;
 
     if (pickCorrectColor === rgb) {
-        messageDisplay.textContent = "You Win Bro!";
         currentStreak++;
+        messageDisplay.textContent = 'You Win Bro!';
         if (currentStreak > bestStreak) {
             bestStreak = currentStreak;
             localStorage.setItem('bestStreak', bestStreak);
@@ -92,7 +92,7 @@ function trackBtn(event) {
         displayContent();
         setGame();
     } else {
-        messageDisplay.textContent = "Try Again Bruh";
+        messageDisplay.textContent = 'Try Again Bruh';
         currentStreak = 0;
         displayContent();
     }

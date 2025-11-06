@@ -28,7 +28,7 @@ var currentStreak = 0; // user track
 var bestStreak = 0; // previous data fetch
 var color = []; // empty array for colors 
 var num = 6; // how many colors to show depneding on game difficulty
-var pickCorrectColor = 0; // picks correct color for the answer
+var pickCorrectColor = 0; // picks correct color for the answer(
 
 // step -> loading process
 function webLoad(){
