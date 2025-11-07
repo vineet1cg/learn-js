@@ -109,4 +109,5 @@ function trackBtn(event) {
 }
 
 btnTrack.addEventListener('click',trackBtn);
-// we must not call the function here so we can track all the 6 buttons
+// we must not call the function here so we can track all the 6 
+// make it like minecraft
