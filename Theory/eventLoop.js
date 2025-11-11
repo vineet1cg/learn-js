@@ -12,3 +12,5 @@ function sayMyName(){
 }
 setTimeout(sayMyName,5000,2);
 console.log("end");
+// set interval -> returns an id 
+// set time out -> calls function once
