@@ -55,6 +55,7 @@ function endGame(){
     startBtn.disabled = false;
     timeLeft = 60;
     displayContent();
+    typingArea.disabled = true;
 }
 
 function startGame(){
@@ -86,13 +87,42 @@ function updateStatus(){
     const wpm = elapsedTime > 0 ? Math.floor(word.length/elapsedTime) : 0;
     wpmDisplay.textContent = wpm;
     // check the ternary operation and also how we converted with elapsed time 
-    
+    var currentScore = 0;
+    for(var i = 0 ; i<currentText.length ; i++){
+        if(currentText[i] == textContent[i]){
+            currentScore++;
+        }
+    }
+    const accuracy = (textContent.length>0) ? Math.floor(currentScore/textContent.length*100).toFixed(1): 0;
+    accuracyDisplay.textContent = `${accuracy}%`;
+}
+function Highlights(){
+    var typed   = typingArea.value;
+    var highlightText = '';
+    for(let i = 0 ; i<currentText.length ; i++){
+        if(i<=typed.length){
+            if(currentText[i] == typed[i]){
+                highlightText += `<span class = "correct">${currentText[i]}</span>`;
+            } else {
+                highlightText += `<span class = "incorrect">${currentText[i]}</span>`;
+            }
+        } else {
+            // for showing the other text normally 
+            highlightText += currentText[i];
+        }
+    }
+    textDisplay.innerHTML = highlightText;
 }
 function wordType(){
     if(startTime == null){
         startTime = Date.now();
     }
     updateStatus();
+    Highlights();    
+}
+function resetGame(){
+    wpm = 0;
 }
 startBtn.addEventListener('click',startGame);
+resetBtn.addEventListener('click',resetGame);
 typingArea.addEventListener('input',wordType);
