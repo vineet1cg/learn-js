@@ -9,7 +9,8 @@ const accuracyDisplay = document.querySelector('#accuracy');
 const bestWPMDisplay = document.querySelector('#bestWPM');
 const startBtn = document.querySelector('#startBtn');
 const resetBtn = document.querySelector('#resetBtn');
-
+const timeArray = document.querySelectorAll('.time');
+console.log(timeArray);
 // text content to show on the html
 
 const testTexts = [
@@ -45,6 +46,11 @@ function onLoad(){
         bestWPM = 0;
     }
 }
+function setTime(seconds){
+
+timeLeft = seconds;
+displayContent();
+}
 function displayContent(){
     timerDisplay.textContent = timeLeft;
     bestWPMDisplay.textContent = bestWPM;
@@ -53,13 +59,12 @@ webLoad();
 function endGame(){
     clearInterval(timeInterval);
     startBtn.disabled = false;
-    timeLeft = 60;
+    // timeLeft = seconds;
     displayContent();
     typingArea.disabled = true;
 }
 
 function startGame(){
-    timeLeft = 60;
     startBtn.disabled = true;
     currentText = testTexts[Math.floor(Math.random()*testTexts.length)];
     textDisplay.textContent = currentText; // reflects it in html elemetn
@@ -68,7 +73,6 @@ function startGame(){
     typingArea.value = "";
     typingArea.focus();
     typingArea.setAttribute('placeholder','Now You Are Able To Type Here');
-
     timeInterval = setInterval(function(){
         timeLeft--;
         if(timeLeft<=0){
@@ -81,7 +85,7 @@ function startGame(){
 function updateStatus(){
     var textContent = typingArea.value;
     const word = textContent.trim().split(/\s+/).filter(w => w.length > 0);
-    // console.log(word);
+    // console.log(word); regular expression used above in split
     const elapsedTime = (Date.now() - startTime)/1000/60;
     // for wpm we need it to be in minutes
     const wpm = elapsedTime > 0 ? Math.floor(word.length/elapsedTime) : 0;
@@ -126,3 +130,4 @@ function resetGame(){
 startBtn.addEventListener('click',startGame);
 resetBtn.addEventListener('click',resetGame);
 typingArea.addEventListener('input',wordType);
+

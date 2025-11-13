@@ -142,3 +142,11 @@ h1 {
         font-size: 2em;
     }
 }
+
+.time{
+    background-color: wheat;
+    cursor: pointer;
+}
+.time:hover{
+    background-color: #6a72d9;
+}
