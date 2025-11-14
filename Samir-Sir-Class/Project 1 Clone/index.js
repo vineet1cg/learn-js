@@ -88,7 +88,7 @@ function startGame(){
 };
 
 function clickMe(){
-    changeColor();
+    // changeColor();
     if(track){
         current++;
         displayMessage();

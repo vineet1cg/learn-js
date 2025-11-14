@@ -1,10 +1,9 @@
 // objectsss 
 
-const { use } = require("react");
-
 // singleton => one of it's type => can be only created by the constructor 
 // Object.create
 // when we use the other way to declare the object it will not be a singleton
+// trickey question to use symbol in the object as a key and give it a random value
 
 const mySym = Symbol("key1");
 
@@ -31,10 +30,17 @@ console.log(user[mySym]);
 // we can overwrite the values by re assigining them as below
 
 user.email = "vineet@chatgpt.com";
-Object.freeze(user);
+// Object.freeze(user);
 user.email = "vineet@microsoft.com";
 console.log(user);
 
+user.greetings = function(){
+    return "Hello User!";
+}
+console.log(user.greetings());
 
-
-// trickey question to use symbol in the object is to 
+user.greetings2 = function(){
+    return `Hello ${this.name}`;
+    // will get value from the current object 
+}
+console.log(user.greetings2());
