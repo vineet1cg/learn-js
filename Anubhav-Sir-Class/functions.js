@@ -16,5 +16,4 @@ console.log(functioName(1,1)) // calling the function
 
 // important topics -> Hoisting ,{ let , const , var } <= proper definitions 
 
-// token genration -> they are checked in private routes for login / other purposes as well 
-
+// token genration -> they are checked in private routes for login / other purposes as well

@@ -45,4 +45,4 @@ console.log(typeof(obj));
 
 const test = "Hello";
 console.log(typeof(test));
-// will genrate a normal string and show dataType As string 
+// will genrate a normal string and show dataType As string
