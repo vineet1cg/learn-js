@@ -10,6 +10,20 @@ var deleteSButton = document.getElementById("deleteseleeted")
 
 // functions and eventlisteners
 
+function updateList(){
+    comdoList = todoList.filter((data)=>{
+        if(data.complete==true){
+            return data;
+        }
+    });
+    remList = todoList.filter((data)=>{
+        if(data.complete == false){
+            return data;
+        }
+    });
+    document.querySelector('#c-count').textContent = comdoList.length;
+
+}
 function addTask(){
     var task = todoInput.value;
     // remember above property !
@@ -27,6 +41,8 @@ function addTask(){
     //     console.log(data);
     // }); see in console when adding data 
     document.querySelector('#r-count').textContent = todoList.length;
+
+    updateList(); // to update the list 
 }
 
 addButton.addEventListener('click',addTask);
