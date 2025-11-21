@@ -3,11 +3,12 @@
 var todoList = []
 var comdoList = [];
 var remList = [];
-var addButton = document.getElementById("add-button")
-var todoInput = document.getElementById("todo-input")
-var deleteAllButton = document.getElementById("delete-all")
+var addButton = document.getElementById("add-button");
+var todoInput = document.getElementById("todo-input");
+var deleteAllButton = document.getElementById("delete-all");
 var allTodos = document.getElementById("all-todos");
-var deleteSButton = document.getElementById("delete-selected")
+var deleteSButton = document.getElementById("delete-selected");
+
 
 //  event listner for add and delete.
 
@@ -37,7 +38,7 @@ function addTask(){
 	var Task = todoInput.value;
 	// User -- Compulsory --> Content neesded {Empty Content xxx} // Not emplty content is allowed
 	if(Task == ""){
-        alert("! Aur do Modi Ko vote! ! Wah Modi ji Wah ! Content Needed");
+        alert("! Kuch Likh Le Bhai ! Content Needed");
         return ;
 	}
 
@@ -67,7 +68,7 @@ function appendTask(todoList){
     
     todoList.forEach((element)=>{
         var x = `<li id=${element.id} class="todo-item">
-        <p id="task">${element.complete ? <strike>${element.content}</strike> : element.content} </p>
+        <p id="task">${element.complete ? `<strike>${element.content}</strike>` : element.content} </p>
         <div class="todo-actions">
             <button class="complete btn btn-success">
                 <i class="ci bx bx-check bx-sm"></i>
@@ -159,3 +160,25 @@ function deleteS(){
     appendTask(todoList);
 }
 deleteSButton.addEventListener('click',deleteS);
+
+
+const allFilter = document.getElementById('all');
+const remFilter = document.getElementById('rem');
+const comFilter = document.getElementById('com');
+
+function clearActiveFilter() {
+    [allFilter, remFilter, comFilter].forEach(el => el && el.classList && el.classList.remove('active-filter'));
+}
+
+function applyFilter(listToShow, clickedEl) {
+    appendTask(listToShow);
+    clearActiveFilter();
+    if (clickedEl && clickedEl.classList) clickedEl.classList.add('active-filter');
+}
+
+if (allFilter) allFilter.addEventListener('click', (e) => { e.preventDefault(); applyFilter(todoList, allFilter); });
+if (remFilter) remFilter.addEventListener('click', (e) => { e.preventDefault(); updateList(); applyFilter(remList, remFilter); });
+if (comFilter) comFilter.addEventListener('click', (e) => { e.preventDefault(); updateList(); applyFilter(comdoList, comFilter); });
+
+
+applyFilter(todoList, allFilter);

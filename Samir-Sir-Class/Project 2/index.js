@@ -103,10 +103,9 @@ function trackBtn(event) {
   } else {
     messageDisplay.textContent = "Try Again Bruh";
     currentStreak = 0;
-    displayContent();
+    displayContent(); 
   }
 }
 
 btnTrack.addEventListener("click", trackBtn);
 // we must not call the function here so we can track all the 6
-// make it like minecraft
