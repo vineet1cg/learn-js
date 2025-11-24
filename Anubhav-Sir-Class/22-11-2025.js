@@ -60,7 +60,7 @@ function gradeCalculator(marks) {
 // using switch case
 
 function gradeCalculator2(marks) {
-  switch (true) {
+  switch (marks) {
     case marks > 0 && marks < 59:
       console.log("F");
       break;
@@ -78,7 +78,34 @@ function gradeCalculator2(marks) {
       break;
   }
 }
-
+function gradeCalculator3(marks) {
+  marks = Math.floor(marks / 10);
+  if (marks >= 0 && marks <= 100) {
+    switch (marks) {
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 5:
+        console.log("F");
+        break;
+      case 6:
+        console.log("D");
+        break;
+      case 7:
+        console.log("C");
+        break;
+      case 8:
+        console.log("B");
+        break;
+      case 9:
+      case 10:
+        console.log("A");
+        break;
+    }
+  }
+}
 function divisableBy5(n) {
   n % 5 == 0
     ? console.log(`${n} is divisable by 5`)
@@ -89,13 +116,8 @@ function divisableBy3And5(n) {
     ? console.log(`${n} is divisable by both 3 and 5`)
     : console.log(`${n} is not divisable by both`);
 }
-function leapYear(year) {
-  if (year % 400 == 0) {
-    console.log(`${year} is a leap year`);
-  } else {
-    console.log(`${year} is not a leap year`);
-  }
-}
+function leapYear(year) {}
+
 function inRange(number) {
   // to check if a number is in range between 10 to 50
   if (number >= 10 && number <= 50) {
@@ -104,10 +126,14 @@ function inRange(number) {
     console.log(`${number} is not in the range`);
   }
 }
+//11
 function print1To10() {
+  // to print horizontally
+  let output = "";
   for (let i = 1; i <= 10; i++) {
-    console.log(i);
+    output += i + " ";
   }
+  console.log(output);
 }
 function print1ToN(n) {
   for (let i = 1; i <= n; i++) {
@@ -155,7 +181,7 @@ function divisableBy3in1ToN(n) {
   }
   console.log(`${count} numbers are divisable by 3 in the range of 1 to ${n}`);
 }
-// iterative factoreal
+
 function factorial(n) {
   if (n < 0) {
     return "Factorial is not defined for negative numbers.";
@@ -171,7 +197,7 @@ function factorial(n) {
     return result;
   }
 }
-// first n multiples of 7
+
 function firstNmultipleOf7(n) {
   for (let i = 1; i <= n; i++) {
     console.log(7 * i);
@@ -199,49 +225,126 @@ function sumOfDigits(n) {
     n = Math.trunc(n / 10);
   }
   return sum;
-};
-function productOfDigits(n){
-    n = Math.trunc(Number(n));
-    n = Math.abs(n);
-    let product = 1;
-    while(n>0){
-        product = product * (n%10)
-        n = Math.trunc(n / 10);
-    }
-    return product
-};
+}
+function productOfDigits(n) {
+  n = Math.trunc(Number(n));
+  n = Math.abs(n);
+  let product = 1;
+  while (n > 0) {
+    product = product * (n % 10);
+    n = Math.trunc(n / 10);
+  }
+  return product;
+}
 
 function reverseAnumber(n) {
   const sign = Math.sign(n) >= 0 ? 1 : -1;
-  const digits = Math.abs(n).toString().split('').reverse().join('');
-  ;
+  const digits = Math.abs(n).toString().split("").reverse().join("");
   return sign * Number(digits);
-};
-function checkIfPalindrome(n){
-    const sign = Math.sign(n) >= 0? 1 : -1;
-    const digits = Math.abs(n).toString().split('').reverse().join('');
-    let rNum = sign * Number(digits);
-    if(rNum === n){
-        console.log(`${n} is a palindrome`);
+}
+function checkIfPalindrome(n) {
+  const sign = Math.sign(n) >= 0 ? 1 : -1;
+  const digits = Math.abs(n).toString().split("").reverse().join("");
+  let rNum = sign * Number(digits);
+  if (rNum === n) {
+    console.log(`${n} is a palindrome`);
+  } else {
+    console.log(`${n} is not a palindrome`);
+  }
+}
+function checkIfPrime(n) {
+  let isPrime = false;
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) {
+      console.log(`${n} is divisable by ${i} thus not prime `);
+      return;
     } else {
-        console.log(`${n} is not a palindrome`);
+      isPrime = true;
     }
+  }
+  if (isPrime || n == 2) {
+    console.log(`${n} is a prime number`);
+  }
+}
+function returnPrime(n) {
+  let isPrime = false;
+  for (let i = 2; i < n; i++) {
+    if (n % i == 0) {
+      return false;
+    } else {
+      isPrime = true;
+    }
+  }
+  if (isPrime || n == 2) {
+    return true;
+  }
+}
+function allPrimes1ToN(n) {
+  for (let i = 2; i < n; i++) {
+    if (returnPrime(i)) {
+      console.log(i);
+    } else {
+      continue;
+    }
+  }
+}
+function fibonacci1ToN(n) {
+  if (n == 1) {
+    console.log(0);
+  } else if (n > 1) {
+    let first = 0;
+    let second = 1;
+    let sum = 0;
+    while (n != 0) {
+      console.log(sum);
+      first = second;
+      second = sum;
+      sum = first + second;
+      n--;
+    }
+  }
+}
+function gcdOf2Nums(a, b) {
+  let n = Math.max(a, b);
+  let maxDiv = 1;
+  for (let i = 1; i <= n; i++) {
+    if (a % i == 0 && b % i == 0) {
+      maxDiv = i;
+    }
+  }
+  console.log(`${maxDiv} is the greatest common divisor`);
+}
+function lcmOf2Nums(a, b) {}
+function lengthOfString(str) {
+  if (typeof str == typeof "") {
+    console.log(str.length);
+  } else {
+    console.log("Input Not A String!");
+  }
+}
+function lengthOfStringUsingWhile(str) {
+	if(typeof(str)==typeof("")){
+  let count = 0;
+  for (let values in str.split("")) {
+    count++;
+  }
+  console.log(count);
+	} else {
+		console.log("Input Not An Array");
+	}
 };
-function checkIfPrime(n){
-    let isPrime = false;
-    for(let i = 2 ; i<n ; i++){
-        if(n%i==0){
-            console.log(`${n} is divisable by ${i} thus not prime `);
-            return;
-        } else {
-            isPrime = true;
-        }
-    }
-    if(isPrime || n == 2 ){
-        console.log(`${n} is a prime number`);
-    }
+// use while loop
+function printCharFromStr(str){
+	if(typeof(str)==typeof("")){
+  let cArray = str.split("");
+	let ans = ""
+  for (let values in cArray) {
+    ans = values + ""
+  }
+	} else {
+		console.log("Input Not An Array");
+	}
 };
-
 
 
 
