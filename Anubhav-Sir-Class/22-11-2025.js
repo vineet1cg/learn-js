@@ -205,15 +205,16 @@ function firstNmultipleOf7(n) {
 }
 
 function countDigitsInNumber(n) {
-  let digitCount = 0;
+  // let digitCount = 0;
   if (n < 0) {
     n = Math.abs(n);
   }
-  while (n != 0) {
-    n = Math.floor(n / 10);
-    digitCount++;
-  }
-  console.log(digitCount);
+  // while (n != 0) {
+  //   n = Math.floor(n / 10);
+  //   digitCount++;
+  // }
+  // console.log(digitCount);
+  return String(n).length
 }
 
 function sumOfDigits(n) {
@@ -323,29 +324,45 @@ function lengthOfString(str) {
   }
 }
 function lengthOfStringUsingWhile(str) {
-	if(typeof(str)==typeof("")){
-  let count = 0;
-  for (let values in str.split("")) {
-    count++;
+  if (typeof str == typeof "") {
+    let count = 0;
+    for (let values in str.split("")) {
+      count++;
+    }
+    console.log(count);
+  } else {
+    console.log("Input Not An Array");
   }
-  console.log(count);
-	} else {
-		console.log("Input Not An Array");
-	}
-};
+}
 // use while loop
-function printCharFromStr(str){
-	if(typeof(str)==typeof("")){
-  let cArray = str.split("");
-	let ans = ""
-  for (let values in cArray) {
-    ans = values + ""
+function printCharFromStr(str) {
+  if (typeof str == typeof "") {
+    let cArray = str.split("");
+    let ans = "";
+    for (let values in cArray) {
+      ans = values + "";
+    }
+  } else {
+    console.log("Input Not An String");
   }
-	} else {
-		console.log("Input Not An Array");
-	}
 };
+function countVowel(str) {
+  const vowelArray = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  if (typeof str === 'string') {
+    const vowelCount = str.split('').filter(char => vowelArray.includes(char)).length;
+    console.log(`Number of vowels: ${vowelCount}`);
+    return vowelCount;
+  } else {
+    console.log("Input is not a string");
+  }
+}
 
 
 
-
+function toLowerStr(str){
+  if(typeof(str)==typeof("")){
+    console.log(str.toLowerCase());
+    return;
+  }
+};
+toLowerStr("HELLO");
