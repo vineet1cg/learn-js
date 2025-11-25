@@ -473,4 +473,3 @@ function extractAndPrintIntegers(inputString) {
     console.log("No integers found in the string.");
   }
 };
-extractAndPrintIntegers("abc123");

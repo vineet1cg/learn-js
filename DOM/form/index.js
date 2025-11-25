@@ -15,6 +15,39 @@ let email;
 let age;
 let address;
 
+function checkName(fname){
+	fname = fname.split('');
+	let specialChar = ['@','#','$','%','!','+','-'];
+	let isNormal = false;
+	for(let i = 0 ; i<fname.length ; i++){
+		if(fname[i]!='@' && fname[i]!='#' && fname[i]!='+' && fname[i]!='-' && fname[i]!='$' && fname[i]!='%' && fname[i]!='!'){
+			isNormal = true;
+		} else {
+			alert("Abey Naam Sahi Se Likh Na");
+			return false;
+		}
+	}
+	return true;
+};
+function checkData(uemail){
+	let checkMailArray = uemail.split("");
+	let compareEmail = "@gmail.com".split("");
+	let isSame = false;
+	let j = 9;
+	for(let i = checkMailArray.length - 1 ;i>=(checkMailArray.length - compareEmail.length) ; --i){
+		if(checkMailArray[i]==compareEmail[j]){
+			isSame = true;
+			--j;
+		} else {
+			console.log("No No No");
+			j = 9;
+		}
+	}
+	if(isSame){
+		showDiv.style.backgroundColor = "red";
+	}
+	return true;
+}
 function showData(){
 	alert("tumhara data aagya mere pass ab chale ja");
 	showDiv.style.display = "block";
@@ -33,7 +66,11 @@ function getdata(e){
 	email = emailInput.value.trim();
 	age = ageInput.value.trim();
 	address = addressInput.value.trim();
-	showData();
+	// add a function here to check data :-|
+	;
+	if(checkData(email) && checkName(fname)){
+		showData();
+	}
 };
 
 form.addEventListener('submit', getdata);
