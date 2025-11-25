@@ -214,7 +214,7 @@ function countDigitsInNumber(n) {
   //   digitCount++;
   // }
   // console.log(digitCount);
-  return String(n).length
+  return String(n).length;
 }
 
 function sumOfDigits(n) {
@@ -315,7 +315,9 @@ function gcdOf2Nums(a, b) {
   }
   console.log(`${maxDiv} is the greatest common divisor`);
 }
-function lcmOf2Nums(a, b) {}
+function lcmOf2Nums(a, b) {
+  
+}
 function lengthOfString(str) {
   if (typeof str == typeof "") {
     console.log(str.length);
@@ -345,11 +347,13 @@ function printCharFromStr(str) {
   } else {
     console.log("Input Not An String");
   }
-};
+}
 function countVowel(str) {
-  const vowelArray = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
-  if (typeof str === 'string') {
-    const vowelCount = str.split('').filter(char => vowelArray.includes(char)).length;
+  const vowelArray = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+  if (typeof str === "string") {
+    const vowelCount = str
+      .split("")
+      .filter((char) => vowelArray.includes(char)).length;
     console.log(`Number of vowels: ${vowelCount}`);
     return vowelCount;
   } else {
@@ -357,12 +361,116 @@ function countVowel(str) {
   }
 }
 
-
-
-function toLowerStr(str){
-  if(typeof(str)==typeof("")){
+function toLowerStr(str) {
+  if (typeof str == typeof "") {
     console.log(str.toLowerCase());
     return;
+  } else {
+    console.log("Not A String");
+  }
+}
+function toUpperStr(str) {
+  if (typeof str == typeof "") {
+    console.log(str.toUpperCase());
+    return;
+  } else {
+    console.log("Not A String");
+  }
+}
+function revStr(str) {
+  if (typeof str == typeof "") {
+    console.log(str.split("").reverse().join(""));
+    return;
+  } else {
+    console.log("Not A String");
+  }
+}
+function checkPalindromeStr(str) {
+  if (typeof str == typeof "") {
+    let rStr = str.split("").reverse().join("");
+    if (rStr == str) {
+      console.log("true");
+    } else {
+      console.log("false");
+    }
+  } else {
+    console.log("Not A String");
+  }
+}
+function chekOccurencesOfa(str) {
+  if (typeof str == typeof "") {
+    let count = 0;
+    let array = str.split("");
+    for (let i = 0; i < array.length; i++) {
+      if (array[i] == "a" || array[i] == "A") {
+        count++;
+      }
+    }
+    console.log(count);
+  } else {
+    console.log("Not A String");
+  }
+}
+function removeSpacesStr(str) {
+  if (typeof str == typeof "") {
+    return str.split(" ").join("");
+  } else {
+    console.log("Not A String");
+  }
+}
+function countWordsInStr(str) {
+  if (typeof str == typeof "") {
+    return str.split(" ").length;
+  } else {
+    console.log("Not A String");
+  }
+}
+function replaceAwithE(str) {
+  if (typeof str == typeof "") {
+    return str.replaceAll("a", "e");
+  } else {
+    console.log("Not A String");
   }
 };
-toLowerStr("HELLO");
+
+function checkIfContaingChar(str, ch) {
+  if (typeof str == typeof "" && typeof(ch) == typeof('a')) {
+    if(str.split('').includes(ch)){
+      console.log("true");
+    } else {
+      console.log("false");
+    }
+  } else {
+    console.log("Not A String");
+  }
+};
+function compareTwoStrings(str1,str2){
+  if(str1===str2){
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+};
+// type checking nhi ho rhi
+// function countDigitsInStr(str){
+//   if (typeof str == typeof "") {
+
+//     console.log(count);
+//   } else {
+//     console.log("Not A String");
+//   }
+// };
+function extractAndPrintIntegers(inputString) {
+  const integers = inputString.match(/\d+/g);
+  console.log((integers));
+
+  if (integers) {
+    console.log("Integers found:");
+    integers.forEach(integer => {
+      console.log(parseInt(integer, 10));
+    });
+  } else {
+    console.log("No integers found in the string.");
+  }
+};
+extractAndPrintIntegers("abc123");
