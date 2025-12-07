@@ -378,7 +378,7 @@ function toUpperStr(str) {
   }
 }
 function revStr(str) {
-  if (typeof str == typeof "") {
+  if (typeof str == String) {
     console.log(str.split("").reverse().join(""));
     return;
   } else {
