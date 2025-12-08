@@ -5,7 +5,9 @@ const card = document.getElementById('card');
 const btn = document.getElementById('btn');
 
 let getPokeData = () =>{
-    let id = Math.floor(Math.random() * 150) + 1;
+    // added more diversity by multiplying 1024 -> it works
+    // task:find out how many pokemons does pokeAPI Has
+    let id = Math.floor(Math.random() * 1024) + 1;
     // console.log(id);
     // concates url string with id
     const finalUrl = url + id;
