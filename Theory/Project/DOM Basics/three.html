@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data</title>
+  </head>
+  <body>
+    <p></p>
+    <input type="text" name="" id="txt" placeholder="write a single char" />
+    <div class="card"></div>
+    <button type="button" class="btn">click me</button>
+    <script>
+      var input = document.querySelector("#txt");
+      var btn = document.querySelector(".btn");
+      var p = document.querySelector("p");
+
+      function display() {
+        var char = input.value.charCodeAt(0);
+        try{
+        if(input.value.length > 1 || (char>=65 && char<=90) || (char>=48 && char<=57) ){
+            throw new Error("Not A Single Char Or Capital Char");
+        } else {
+            p.style.color = 'green';
+            p.style.fontWeight = '800';
+            p.style.fontSize = '16px';
+            p.innerText = `${input.value}`;
+        }
+      }
+      catch(e){
+        p.innerText = `${e}`
+        p.style.color = 'red';
+
+      }
+      finally{
+        input.value = ""
+      }
+      }
+
+      btn.addEventListener("click", display);
+    </script>
+  </body>
+</html>

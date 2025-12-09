@@ -13,3 +13,4 @@ let getJoke = ()=>{
 
 };
 btn.addEventListener('click',getJoke);
+window.addEventListener('load',getJoke);

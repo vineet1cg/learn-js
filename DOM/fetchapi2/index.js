@@ -1,5 +1,7 @@
 //fetch pokemon data with pic
-const url = " https://pokeapi.co/api/v2/pokemon/";
+const url = "https://pokeapi.co/api/v2/pokemon/";
+// other url https://pokemon-service-ucql.onrender.com/api/v1/pokemon/search?name=
+// check for compatibiity
 
 const card = document.getElementById('card');
 const btn = document.getElementById('btn');

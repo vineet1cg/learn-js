@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data</title>
+  </head>
+  <body>
+    <p></p>
+    <input type="text" name="" id="txt" placeholder="write a single char"/>
+    <div class="card"></div>
+    <button type="button" class="btn">click me</button>
+    <script>
+      var input = document.querySelector("#txt"); 
+      var btn = document.querySelector(".btn");
+      var p = document.querySelector("p");
+      var arr = [10, 20, 30, 40, 50];
+
+      function display() {
+        var index = parseInt(input.value, 10); 
+        try {
+          if (!Number.isInteger(index) || index < 0 || index >= arr.length) {
+            throw new Error("Index out of bounds or invalid");
+          }
+          console.log(arr[index]);
+          p.textContent = arr[index];
+          p.style.color = "green";
+        } catch (e) {
+          p.textContent = e.message;
+          p.style.color = "red";
+        }
+      }
+
+      btn.addEventListener("click", display);
+    </script>
+  </body>
+</html>
