@@ -127,17 +127,17 @@ function toggleCase(str) {
 
 // 51 print all elements of an array
 
-function logArray(arr){
-  for(let i = 0 ; i < arr.length ; i++){
+function logArray(arr) {
+  for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
   }
-};
-function logArray2(arr){
+}
+function logArray2(arr) {
   let arr2 = [...arr];
   console.log(arr2);
-};
-function logArray3(arr){
-  let otherArr = arr.join('');
+}
+function logArray3(arr) {
+  let otherArr = arr.join("");
   console.log(otherArr);
 }
 // logArray3([1,3,4,5,6]);
@@ -350,21 +350,104 @@ function checkSorted(arr) {
 }
 // checkSorted([1,2,3,4,5,6]);
 // 69
-function secondLargest(arr){
+function secondLargest(arr) {
   let l1 = arr[0];
   let l2 = arr[0];
-  for(let i = 0 ; i< arr.length ; i++){
-    if(l1<arr[i]){
+  for (let i = 0; i < arr.length; i++) {
+    if (l1 < arr[i]) {
       l2 = l1;
-      l1 = arr[i]
-    } else if(arr[i]>l2 && arr[i]<l1){
+      l1 = arr[i];
+    } else if (arr[i] > l2 && arr[i] < l1) {
       l2 = arr[i];
     }
   }
   return l2;
 }
 // console.log(secondLargest([10,20,5,7,8]));
-// 70
+// 70 Second Smallest Element
+
+// 71 Remove Even Numbers From Array
+
+function remEven(arr){
+  let odd = arr.filter(number => number% 2!==0);
+  return odd;
+};
+
+// we can also use for loop + push method
+
+// 72 remove duplicates from both type of data -> integers and characters
+
+// method - 1 > use set
+
+function remDup(arr) {
+  let res = [...new Set(arr)];
+  console.log(res);
+}
+// remDup([1, 2, 2, 3, 3, 3]);
+
+// method 2 > use nested loop
+
+function remDup2(arr){
+  let res = [];
+  for(let i = 0 ; i < arr.length ; i++){
+    let isDuplicate = false;
+    for(let j = 0 ; j < res.length ; j++){
+      if(arr[i] === res[j]){
+        isDuplicate = true;
+        break;
+      }
+    }
+    if(!isDuplicate){
+      res.push(arr[i]);
+    }
+  }
+  console.log(res);
+}
+remDup2([1,2,2,3,3,3]);
 
 
+// 73 > Concatenate Two Arrays
+
+function concArr(arr1,arr2){
+  let res = [...arr1,...arr2];
+  return res;
+}
+// console.log(concArr([1,2,3],[4,5,6]));
+
+
+// 75 rotate array to right by 1
+
+function rotateArr(arr){
+  let last = arr.pop();
+  arr.unshift(last);
+  return arr;
+};
+// console.log(rotateArr([1,2,3,4]));
+
+
+// 76 totate arraay to left by 1
+
+function rotateArr2(arr){
+  let newArr = [...arr];
+  let first = newArr.shift();
+  newArr.push(first);
+  return newArr;
+};
+// console.log(rotateArr2([1,2,3,4]));
+
+// 77 count elements above avg
+
+function numsAboveAvg(arr){
+  let sum = 0;
+  for(let i = 0 ; i<arr.length ; i++){
+    sum = sum + arr[i];
+  }
+  let avg = sum / arr.length;
+  let ans = arr.filter(nums => nums>avg);
+  return ans;
+};
+// console.log(numsAboveAvg([1,2,3,4,5]));
+
+
+// 78 largest positive and smallest negative
 
