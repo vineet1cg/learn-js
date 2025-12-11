@@ -164,7 +164,7 @@ const sum = numbers.reduce((accumulator, currentValue) => {
 
 // 53 max in array
 
-function maxInArray(arr) {
+function maxInArray1(arr) {
   if (!Array.isArray(arr) || arr.length === 0) {
     console.log(undefined);
     return undefined;
@@ -178,8 +178,19 @@ function maxInArray(arr) {
   console.log(max);
   return max;
 }
+function maxInArray2(arr) {
+  // using sort > decending sort
+  arr.sort((a, b) => b - a);
+  return arr[0];
+}
+function maxInArray3(arr) {
+  let max = Math.max(...arr);
+  return max;
+}
+// console.log(maxInArray3([1,2,3,4,5,6,7]));
+// console.log(maxInArray2([1,2,3,4,5]));
 
-// maxInArray([1,2,3,4,5,8])
+// maxInArray1([1,2,3,4,5,8])
 
 // 54 minimum in array
 
@@ -192,18 +203,33 @@ function minInArray(arr) {
   }
   return min;
 }
+function minInArray2(arr) {
+  let min = Math.min(...arr);
+  return min;
+}
+function minInArray3(arr) {
+  // soted in accending array sort
+  arr.sort((a, b) => a - b);
+  return arr[0];
+}
 // console.log(minInArray([-1,0,1,2,3,4]));
 
 // 55 Count Even Numbers in an array
 function counEven(arr) {
-  let sum = 0;
+  let count = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 == 0) {
-      sum += arr[i];
+      count++;
     }
   }
-  return sum;
+  return count;
 }
+// other method to count odd numbers in an array
+function counEven2(arr) {
+  return arr.filter((n) => n % 2 == 0).length;
+}
+// console.log(counEven2([1,3,4,5,6,8,9,]));
+
 // console.log(counEven([2,4,6]))
 // 56
 function countOdd(arr) {
@@ -265,7 +291,12 @@ function avgOfArr(arr) {
 // console.log(avgOfArr([1,2,3,4,5]));
 
 // 61 double each element
-
+function doubleArr1(arr){
+  for(let i = 0 ; i<arr.length ; i++){
+    arr[i] = arr[i]*2;
+  };
+  return arr;
+}
 function doubleArr(arr) {
   let double = arr.map((elements) => elements * 2);
   return double;
@@ -273,7 +304,13 @@ function doubleArr(arr) {
 // console.log(doubleArr([1,2,3,4,5]));
 
 // 62 square each element
-
+function square1(arr){
+  for(let i = 0 ; i<arr.length ; i++){
+    arr[i] = arr[i] * arr[i];
+  };
+  return arr;
+};
+// console.log(square1([1,2,3,4]));
 function square(arr) {
   let squared = arr.map((element) => element * element);
   return squared;
@@ -281,6 +318,12 @@ function square(arr) {
 // console.log(square([1,2,3,4]));
 
 // 63 reverse an array into new array
+function arrRev1(arr){
+  let revArr = new Array(...arr);
+  return revArr.reverse();
+};
+// console.log(arrRev([1,2,3,4,5]));
+
 
 function arrRev(arr) {
   let revArr = [];
@@ -288,8 +331,21 @@ function arrRev(arr) {
     revArr[i] = arr[arr.length - i - 1];
   }
   return revArr;
-}
+};
+
 // console.log(arrRev([1,2,3,4,5,6]));
+
+// using two pointers
+function arrRev1(arr){
+  let i = 0;
+  let j = arr.length-1;
+  while(i<=j){
+    [arr[i],arr[j]] = [arr[j],arr[i]];
+    i++;
+    j--;
+  };
+  return arr;
+}
 
 // 64 copy an array
 function copyArr(arr) {
@@ -297,6 +353,14 @@ function copyArr(arr) {
   for (let i = 0; i < arr.length; i++) {
     copy.push(arr[i]);
   }
+  return copy;
+};
+function copyArr2(arr){
+  let copy = [...arr];
+  return copy;
+}
+function copyArr3(arr){
+  let copy = arr;
   return copy;
 }
 // console.log(copyArr([1,2,3,4,6,8]));
@@ -310,6 +374,21 @@ function arrayTarget(arr, target) {
   }
   return false;
 }
+
+function arrayTarget2(arr, target) {
+  return arr.includes(target);
+}
+function arrayTarget3(arr,target){
+  let ans = arr.filter((elements)=> elements===target);
+  if(ans){
+    return true;
+  }else {
+    return false;
+  }
+}
+// console.log(arrayTarget3([1,2,3],3));
+
+
 // 66
 function returnIndex(arr, target) {
   for (let i = 0; i < str.length; i++) {
@@ -319,6 +398,10 @@ function returnIndex(arr, target) {
   }
   return -1;
 }
+function returnIndexOf(arr,target){
+  return arr.indexOf(target);
+};
+// console.log(returnIndexOf([1,2,3],1));
 
 // 67
 function returnFreq(arr, target) {
@@ -329,30 +412,60 @@ function returnFreq(arr, target) {
     }
   }
   return count;
-}
+};
+function returnFreq2(arr,target){
+  let obj = {};
+  for(let i = 0 ; i<arr.length ; i++){
+    if(obj[arr[i]]){
+      obj[arr[i]]++;
+    } else {
+      obj[arr[i]] = 1;
+    }
+  }
+  if(obj[target]){
+    return obj[target];
+  } else {
+    return -1;
+  }
+};
+
+// console.log(returnFreq2([1,2,3,3],3));
+
+// ->> For String Checking !
+function charFreqInStr(str){
+  let obj ={};
+  for(let i  = 0 ; i<str.length ; i++){
+    if(obj[str[i]]){
+      obj[str[i]]++;
+    }else {
+      obj[str[i]] = 1;
+    }
+  }
+  for (const key in obj){
+    console.log(key,obj[key]);
+  }
+};
+// charFreqInStr("Hello");
+
 
 // 68 check if sorted
 
 function checkSorted(arr) {
-  var n = arr.length;
-  var a = 0;
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] > arr[i + 1]) {
-      a = 1;
-      break;
+      return false;
     }
   }
-  if (a == 0) {
-    console.log("Array Is Sorted");
-  } else {
-    console.log("Array Is Not Sorted");
-  }
-}
-// checkSorted([1,2,3,4,5,6]);
+  return true;
+};
+
+// console.log(checkSorted([1,1,1,4,5,6]));
+
 // 69
+
 function secondLargest(arr) {
   let l1 = arr[0];
-  let l2 = arr[0];
+  let l2 = -Infinity;
   for (let i = 0; i < arr.length; i++) {
     if (l1 < arr[i]) {
       l2 = l1;
@@ -363,15 +476,46 @@ function secondLargest(arr) {
   }
   return l2;
 }
-// console.log(secondLargest([10,20,5,7,8]));
+function secondLargest2(arr){
+  let max = 0;
+  let smax = 0;
+  for(let i = 0 ; i<arr.length ; i++){
+    if(arr[i]>max){
+      max = arr[i];
+    }
+  }
+  for(let i = 0 ; i<arr.length ; i++){
+    if(arr[i]>smax && arr[i]<max){
+      smax = arr[i];
+    }
+  }
+  return smax;
+};
+function secondLargest3(arr){
+  let sorted = arr.sort((a,b) => b-a);
+  return sorted[1];
+};
+
+// console.log(secondLargest3([10,20,5,7,8]));
+
 // 70 Second Smallest Element
 
 // 71 Remove Even Numbers From Array
 
-function remEven(arr){
-  let odd = arr.filter(number => number% 2!==0);
+function remEven(arr) {
+  let odd = arr.filter((number) => number % 2 !== 0);
   return odd;
+}
+function remEven2(arr){
+  let res = [];
+  for(let i = 0 ; i<arr.length ; i++){
+    if(arr[i]%2!==0){
+      res.push(arr[i]);
+    }
+  }
+  return res;
 };
+// console.log(remEven2([1,2,3,4,5]));
 
 // we can also use for loop + push method
 
@@ -387,67 +531,62 @@ function remDup(arr) {
 
 // method 2 > use nested loop
 
-function remDup2(arr){
+function remDup2(arr) {
   let res = [];
-  for(let i = 0 ; i < arr.length ; i++){
+  for (let i = 0; i < arr.length; i++) {
     let isDuplicate = false;
-    for(let j = 0 ; j < res.length ; j++){
-      if(arr[i] === res[j]){
+    for (let j = 0; j < res.length; j++) {
+      if (arr[i] === res[j]) {
         isDuplicate = true;
         break;
       }
     }
-    if(!isDuplicate){
+    if (!isDuplicate) {
       res.push(arr[i]);
     }
   }
   console.log(res);
 }
-remDup2([1,2,2,3,3,3]);
-
+// remDup2([1,2,2,3,3,3]);
 
 // 73 > Concatenate Two Arrays
 
-function concArr(arr1,arr2){
-  let res = [...arr1,...arr2];
+function concArr(arr1, arr2) {
+  let res = [...arr1, ...arr2];
   return res;
 }
 // console.log(concArr([1,2,3],[4,5,6]));
 
-
 // 75 rotate array to right by 1
 
-function rotateArr(arr){
+function rotateArr(arr) {
   let last = arr.pop();
   arr.unshift(last);
   return arr;
-};
+}
 // console.log(rotateArr([1,2,3,4]));
-
 
 // 76 totate arraay to left by 1
 
-function rotateArr2(arr){
+function rotateArr2(arr) {
   let newArr = [...arr];
   let first = newArr.shift();
   newArr.push(first);
   return newArr;
-};
+}
 // console.log(rotateArr2([1,2,3,4]));
 
 // 77 count elements above avg
 
-function numsAboveAvg(arr){
+function numsAboveAvg(arr) {
   let sum = 0;
-  for(let i = 0 ; i<arr.length ; i++){
+  for (let i = 0; i < arr.length; i++) {
     sum = sum + arr[i];
   }
   let avg = sum / arr.length;
-  let ans = arr.filter(nums => nums>avg);
+  let ans = arr.filter((nums) => nums > avg);
   return ans;
-};
+}
 // console.log(numsAboveAvg([1,2,3,4,5]));
 
-
 // 78 largest positive and smallest negative
-
