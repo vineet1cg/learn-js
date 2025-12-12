@@ -499,6 +499,10 @@ function secondLargest3(arr){
 // console.log(secondLargest3([10,20,5,7,8]));
 
 // 70 Second Smallest Element
+function secondSmallest(arr){
+  let ans = arr.sort((a,b)=> a-b);
+  return ans[1];
+};
 
 // 71 Remove Even Numbers From Array
 
@@ -547,7 +551,19 @@ function remDup2(arr) {
   }
   console.log(res);
 }
-// remDup2([1,2,2,3,3,3]);
+function remdup3(arr){
+  let obj ={}
+  for(let i = 0 ; i <arr.length ; i++){
+    if(obj[arr[i]]){
+      continue;
+    } else {
+      obj[arr[i]] = 1;
+    }
+  }
+  return Object.keys(obj);
+}
+
+// console.log(remdup3([1,2,2,3,3,3]));
 
 // 73 > Concatenate Two Arrays
 
@@ -555,7 +571,44 @@ function concArr(arr1, arr2) {
   let res = [...arr1, ...arr2];
   return res;
 }
+function concArr2(arr1,arr2){
+  let res = arr1.concat(arr2);
+  return res;
+}
+function concArr3(arr1,arr2){
+  let res = [];
+  for(let i = 0 ; i<arr1.length ; i++){
+    res.push(arr1[i]);
+  }
+  for(let i = 0 ; i<arr1.length ; i++){
+    res.push(arr2[i]);
+  }
+  return res;
+}
 // console.log(concArr([1,2,3],[4,5,6]));
+// 74 intersection of two arrays
+function intersection(arr1,arr2){
+  let res = arr1.filter((elements)=>arr2.includes(elements));
+  return res;
+};
+// console.log(intersection([1,2,3,4],[3,4,5]));
+// function intersection2(arr1,arr2){
+//   let res = [];
+//   let i = 0;
+//   let j = 0;
+//   while(i<arr1.length && j<arr2.length){
+//     if(arr1[i]==arr2[j]){
+//       res.push(arr1[i]);
+//       i++;
+//       j++;
+//     }else if(arr1[i] > arr2[j]){
+//       i++;
+//     } else {
+//       j++;
+//     }
+//   }
+//   return res;
+// }
 
 // 75 rotate array to right by 1
 
@@ -590,3 +643,42 @@ function numsAboveAvg(arr) {
 // console.log(numsAboveAvg([1,2,3,4,5]));
 
 // 78 largest positive and smallest negative
+// 1-> sort and return first and last indext
+
+function largestSmallest(arr){
+  arr.sort((a,b)=>b-a);
+  return `${arr[0]} is largest and ${arr[arr.length-1]} is smallest`
+};
+// console.log(largestSmallest([-6,-87 , 4 , 34 , 12 , 56]));
+// 79
+function countBinary(arr){
+  let c_1 = 0;
+  let c_0 = 0;
+  for(let i = 0 ; i<arr.length ; i++){
+    if(arr[i]==1){
+      c_1++;
+    }else if(arr[i]==0){
+      c_0++;
+    }else {
+      return -1
+    }
+  }
+  return `zeros = ${c_0} , ones = ${c_1}`;
+}
+// console.log(countBinary([0,1,0,0,0,1,0,1]));
+
+// 80 separate even and odd arrays
+function separate(arr){
+  let odd = [];
+  let even = [];
+  for(let i = 0 ; i<arr.length ; i++){
+    if(arr[i]%2===0){
+      even.push(arr[i]);
+    } else {
+      odd.push(arr[i]);
+    }
+  }
+  console.log('even',even);
+  console.log('odd',odd);
+}
+// separate([1,2,3,4,5,6,7,8]);

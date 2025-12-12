@@ -82,9 +82,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1344.356882315952,
-			"y": 4348.670642430682,
-			"lastActivityTimestamp": 1763097854172,
+			"x": -807.6548696754453,
+			"y": 447.8588674958196,
+			"lastActivityTimestamp": 1765511207503,
 			"meta": {}
 		},
 		{
@@ -164,7 +164,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a6CIFwzl",
+			"index": "a5d3pctj",
 			"typeName": "shape"
 		},
 		{
@@ -460,9 +460,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -1016.1964048125823,
-			"y": -4089.00965607892,
-			"z": 0.4843685740826655,
+			"x": 2998.0108878583533,
+			"y": 1026.0253457703584,
+			"z": 0.09770102610766897,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -659,9 +659,7 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:adEvfcPyVf2BD55QuIKPF"
-			],
+			"selectedShapeIds": [],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -1212,7 +1210,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a5zzzYDQmQ",
+			"index": "a5zzUxziWTAA",
 			"typeName": "shape"
 		},
 		{
@@ -1817,17 +1815,11 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:geo": "rectangle",
-				"tldraw:font": "mono",
-				"tldraw:arrowKind": "elbow",
-				"tldraw:color": "black",
-				"tldraw:horizontalAlign": "middle"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
-				"type": "move",
+				"type": "default",
 				"rotation": 0
 			},
 			"isFocusMode": false,
@@ -1837,8 +1829,8 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 692.129638671875,
-				"h": 302.0833435058594
+				"w": 925.3333740234375,
+				"h": 599.3333740234375
 			},
 			"insets": [
 				false,
@@ -1853,8 +1845,8 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 2.5920000076293945,
-			"isCoarsePointer": false,
+			"devicePixelRatio": 1.5,
+			"isCoarsePointer": true,
 			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
@@ -1906,7 +1898,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a6taiTI8",
+			"index": "a5zxnV6gBt",
 			"typeName": "shape"
 		},
 		{
@@ -2445,7 +2437,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a5zzg20ACA",
+			"index": "a5zzUzSSN3CV",
 			"typeName": "shape"
 		},
 		{
@@ -2640,7 +2632,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a5zzsuvfyl",
+			"index": "a5zzRIpclAV",
 			"typeName": "shape"
 		},
 		{
@@ -2834,7 +2826,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a5zzafzmzL",
+			"index": "a5zzPxUN5Un",
 			"typeName": "shape"
 		},
 		{
