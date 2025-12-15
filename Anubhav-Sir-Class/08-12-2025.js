@@ -563,7 +563,7 @@ function remdup3(arr){
   return Object.keys(obj);
 }
 
-// console.log(remdup3([1,2,2,3,3,3]));
+console.log(remdup3([1,2,2,3,3,3]));
 
 // 73 > Concatenate Two Arrays
 

@@ -250,7 +250,7 @@ function checkIfPalindrome(n) {
   if (rNum === n) {
     console.log(`${n} is a palindrome`);
   } else {
-    console.log(`${n} is not a palindrome`);
+    console.log(`${n} is not a  `);
   }
 }
 function checkIfPrime(n) {
