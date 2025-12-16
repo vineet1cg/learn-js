@@ -245,3 +245,29 @@ function avgOf(obj){
   return sum/count;
 }
 // console.log(avgOf({apple: 50, banana: 20, mango: 30}));
+
+function keysOf(obj){
+  return Object.keys(obj);
+}
+// console.log(keysOf({name: "Neel", age: 25}));
+
+function countPairs(obj){
+  let count = 0;
+  for(const [k,v] of Object.entries(obj)){
+    if(k!=undefined && v!=undefined){
+      count++;
+    }
+  }
+  return count;
+}
+// console.log(countPairs({a: 1, b: 2, c: 3}));
+
+function filterAdults(obj){
+
+  let ans = obj.filter((data)=>{
+    // console.log(data);
+    return data.age>18;
+  })
+  return ans;
+}
+console.log(filterAdults([{name: "A", age: 17}, {name: "B", age: 20}, {name: "C", age: 18}]));
