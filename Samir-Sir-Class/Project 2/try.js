@@ -148,3 +148,4 @@ resetStreakBtn.addEventListener('click', resetStreak);
 
 // Initialize game on page load
 webLoad();
+

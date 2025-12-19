@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yo</title>
+</head>
+<body>
+    <button type="button" id="btnhu">Dabao</button>
+    <script>
+        let btn = document.getElementById('btnhu');
+        function addMoreCookie(){
+            document.cookie = "emailId=example1234@gmail.com; Path=/"
+        }
+        function addCookie(){
+            document.cookie = "username=lol; Path=/"
+            document.body.style.backgroundColor = 'gold';
+            setTimeout(()=>{
+                addMoreCookie();
+                document.body.style.backgroundColor = 'blue';
+            },3000);
+        }
+        btn.addEventListener('click',addCookie);
+    </script>
+</body>
+</html>

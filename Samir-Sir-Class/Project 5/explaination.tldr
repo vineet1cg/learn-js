@@ -232,9 +232,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": -1061.0124870770533,
-			"y": 4498.514405906099,
-			"lastActivityTimestamp": 1763012511320,
+			"x": -5057.135361516582,
+			"y": -975.9160850899154,
+			"lastActivityTimestamp": 0,
 			"meta": {}
 		},
 		{
@@ -1065,7 +1065,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "b0T6EI0wV",
+			"index": "b0Siqdi0Q",
 			"typeName": "shape"
 		},
 		{
@@ -1497,9 +1497,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 5923.425511979397,
-			"y": 814.6362288595267,
-			"z": 0.05,
+			"x": 5057.135361516582,
+			"y": 975.9160850899154,
+			"z": 0.06654050524771274,
 			"meta": {},
 			"id": "camera:page:page",
 			"typeName": "camera"
@@ -3734,7 +3734,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a6zgvXMFV",
+			"index": "a6vrJ30Rt",
 			"typeName": "shape"
 		},
 		{
@@ -6037,12 +6037,12 @@
 			"isFocusMode": false,
 			"exportBackground": true,
 			"isDebugMode": false,
-			"isToolLocked": true,
+			"isToolLocked": false,
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 781.9443969726562,
-				"h": 434.02777099609375
+				"w": 925.3333740234375,
+				"h": 599.3333740234375
 			},
 			"insets": [
 				false,
@@ -6057,9 +6057,9 @@
 			"isChatting": false,
 			"highlightedUserIds": [],
 			"isFocused": true,
-			"devicePixelRatio": 1.440000057220459,
-			"isCoarsePointer": false,
-			"isHoveringCanvas": true,
+			"devicePixelRatio": 1.5,
+			"isCoarsePointer": true,
+			"isHoveringCanvas": null,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
@@ -6823,7 +6823,7 @@
 				"scale": 1
 			},
 			"parentId": "page:page",
-			"index": "a6yOHgpz",
+			"index": "a6twL20bC",
 			"typeName": "shape"
 		},
 		{

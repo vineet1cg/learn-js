@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sub Domain Finder</title>
+    <style>
+      body {
+        font-family: system-ui, Segoe UI, Arial, Helvetica, sans-serif;
+        margin: 20px;
+      }
+      #domain {
+        padding: 8px;
+        width: 320px;
+        max-width: 70%;
+      }
+      button {
+        padding: 8px 12px;
+        margin-left: 8px;
+      }
+      #append {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 8px;
+      }
+      .subdomain-item {
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+        background: #fafafa;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .error {
+        color: #900;
+        padding: 8px;
+      }
+      .muted {
+        color: #666;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Subdomain Finder</h1>
+    <p class="muted">
+      Enter a domain (example: example.com) and click to list up to 10
+      subdomains.
+    </p>
+    <div>
+      <input type="text" id="domain" placeholder="example.com" />
+      <button id="click">Find Subdomains</button>
+    </div>
+    <div id="append" aria-live="polite"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
+<!-- check osintgram -->
