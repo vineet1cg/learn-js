@@ -163,9 +163,20 @@ function HarshadNumber(n){
     }
 }
 
-function AutomorphicNumber(n){
-    let square = n*n;
-    let lastNum = n%10;
-    if(square===lastNum) return true;
-    else return false;
+function isAutomorphicString(n) {
+  const square = n * n;
+  const numStr = String(n);
+  const squareStr = String(square);
+
+
+  return squareStr.endsWith(numStr);
+}
+function isAutomorphicByNumber(n){
+    let length = String(n).length;
+    let square = n * n;
+    if(square%10**length==n){
+        return true;
+    } else {
+        return false;
+    }
 }
