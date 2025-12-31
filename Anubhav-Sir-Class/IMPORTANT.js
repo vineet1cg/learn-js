@@ -68,6 +68,40 @@ function countOccurances(nums, n) {
   }
   return count;
 }
+function countOccurancesUsingBinarySearch(nums,n){
+  let left = null;
+  let right = null;
+  let i = 0;
+  let j = nums.length - 1;
+  // leftside
+  while(j>=i){
+    let mid = Math.floor((i+j)/2);
+    if(nums[mid]===n){
+      left=mid;
+      j = mid -1;
+    } else if(nums[mid]>n){
+      j = mid - 1;
+    } else {
+      i = mid + 1;
+    }
+  }
+  // right part
+  i = 0 ;
+  j = nums.length - 1;
+  while(j>i){
+    let mid = Math.floor((i+j)/2)
+    if(nums[mid]===n){
+      right = mid;
+      i = mid + 1;
+    } else if (arr[mid]>n){
+     j = mid -1;
+    } else {
+      i = mid + 1;
+    }
+  }
+  console.log(right-left+1);
+}
+
 function PairSum(nums, target) {
   let arr = [];
   let n = nums.length;
@@ -145,7 +179,18 @@ function binarySearch(arr, target) {
 
 const removeConsecutiveDuplicatesFilter = (arr) => {
   return arr.filter((currentElement, i) => {
-    
+
     return i === 0 || currentElement !== arr[i - 1];
   });
 };
+function triplet(arr,target){
+    for(let i = 0 ; i<arr.length ; i++){
+        for(let j = 0 ; j<arr.length ; j++){
+            for(let k = 0 ; k<arr.length ; k++){
+                if(arr[i]+arr[j]+arr[k]===target){
+                    return true;
+                }
+            }
+        }
+    }
+}
